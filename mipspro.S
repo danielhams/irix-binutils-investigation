@@ -1,10 +1,10 @@
-	.file	1	"/usr/people/dan/Sources/ldtests/simple.c"
+	.file	1	"/usr/people/dan/Sources/GitClones/irix-binutils-investigation.git/simple.c"
 	.set	noreorder
 	.set	noat
 	#  /usr/lib32/cmplrs/be::7.44
 
 	#-----------------------------------------------------------
-	# Compiling simple.c (/tmp/ctmB.BAAa00Sbo)
+	# Compiling simple.c (/tmp/ctmB.BAAa00TbF)
 	#-----------------------------------------------------------
 
 	#-----------------------------------------------------------

@@ -108,7 +108,7 @@ Dynamic section at offset 0x1c8 contains 35 entries:
  0x70000009 (MIPS_LIBLIST)               0x100002e0
  0x00000001 (NEEDED)                     Shared library: [libc.so.1]
  0x70000024 (MIPS_SYMBOL_LIB)            0x10000998
- 0x70000002 (MIPS_TIME_STAMP)            Time Stamp: 2019-06-18T20:38:11
+ 0x70000002 (MIPS_TIME_STAMP)            Time Stamp: 2019-06-18T21:03:28
  0x70000003 (MIPS_ICHECKSUM)             0x755141a0
  0x70000007 (MIPS_MSYM)                  0x100009cc
  0x70000016 (MIPS_RLD_MAP)               0x100040c0

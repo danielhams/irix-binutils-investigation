@@ -33,7 +33,7 @@ $GCC8_TOOLS_PATH/gcc $GLEVEL $OPT simple.c -S -o gcc8.S
 
 $GCC8_TOOLS_PATH/as $GLEVEL $OPT gcc8.S -o gcc8.o
 
-$GCC8_TOOLS_PATH/ld -call_shared -melf32bmipn32 -init __gcc_init -fini __gcc_fini /usr/lib32/mips4/crt1.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crti.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtbegin.o -L$GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0 gcc8.o -lgcc -lgcc_eh -lm -lc -lgcc -lgcc_eh -lm $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtend.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crtn.o /usr/lib32/mips4/crtn.o -o exe.gcc8 || exit -1
+$GCC8_TOOLS_PATH/ld -call_shared -melf32bmipn32 -init __gcc_init -fini __gcc_fini -o exe.gcc8 /usr/lib32/mips4/crt1.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crti.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtbegin.o -L$GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0 gcc8.o -lgcc -lgcc_eh -lm -lc -lgcc -lgcc_eh -lm $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtend.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crtn.o /usr/lib32/mips4/crtn.o || exit -1
 
 BU232_PATH=/builds/dan/bootstrapbuilds/gbstest-binutils232/build-bu
 
