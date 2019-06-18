@@ -1,0 +1,19 @@
+Executable /usr/people/dan/Sources/ldtests/./exe.gcc8.gitld
+(dbx) run
+Now execute givenfile with the following call:
+execvp("/usr/didbs/bin/bash", 
+	"/usr/didbs/bin/bash",
+	"-c",
+	"exec ././exe.gcc8.gitld",
+	(char *)0);
+Warning: SymbolTableDwarf: RA register is DW_FRAME_UNDEFINED_VAL in frame 1034, pc 0xfae43c0
+Process  1699 (exe.gcc8.gitld) started
+Process  1699 (exe.gcc8.gitld) stopped on signal SIGSEGV: Segmentation violation (default) at [build_entire_object_list:446 ,0xfb6ff6c]
+	 Source (of /j7/mtibuild/v744/workarea/v7.4.4m/rld/rld_startup.c) not available for Process  1699
+(dbx) where
+>  0 build_entire_object_list(0xfbd7c58, 0x2, 0x7ffd7da0, 0x34, 0x0, 0x0, 0x76, 0x2) ["/j7/mtibuild/v744/workarea/v7.4.4m/rld/rld_startup.c":446, 0xfb6ff6c]
+   1 read_aux_vec_and_build_objlist(0x2, 0x10000000, 0x40, 0x34, 0x0, 0x0, 0x76, 0x2) ["/j7/mtibuild/v744/workarea/v7.4.4m/rld/rld_startup.c":1508, 0xfb71104]
+   2 sgi_main(0x0, 0x7ffd7f54, 0x7ffd7f54, 0x34, 0x0, 0x0, 0x76, 0x2) ["/j7/mtibuild/v744/workarea/v7.4.4m/rld/rld_startup.c":1648, 0xfb71344]
+   3 newmain() ["/j7/mtibuild/v744/workarea/v7.4.4m/rld/rld_newmain.s":68, 0xfb60184]
+(dbx) 
+

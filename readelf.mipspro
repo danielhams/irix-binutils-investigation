@@ -1,0 +1,248 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 02 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, big endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           MIPS R3000
+  Version:                           0x1
+  Entry point address:               0x10000bb0
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          19320 (bytes into file)
+  Flags:                             0x30000024, cpic, abi2, mips4
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         7
+  Size of section headers:           40 (bytes)
+  Number of section headers:         28
+  Section header string table index: 27
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .interp           PROGBITS        10000114 000114 000015 00   A  0   0  4
+  [ 2] .MIPS.options     MIPS_OPTIONS    10000130 000130 000080 00  Ao  0   0  8
+  [ 3] .reginfo          MIPS_REGINFO    100001b0 0001b0 000018 18   A  0   0  4
+  [ 4] .dynamic          DYNAMIC         100001c8 0001c8 000118 08   A  6   0  4
+  [ 5] .liblist          MIPS_LIBLIST    100002e0 0002e0 000014 14   A  6   1  4
+  [ 6] .dynstr           STRTAB          100002f4 0002f4 0001c8 00   A  0   0  4
+  [ 7] .hash             HASH            100004bc 0004bc 0001cc 04   A  8   0  4
+  [ 8] .dynsym           DYNSYM          10000688 000688 000310 10   A  6  10  4
+  [ 9] .MIPS.symlib      MIPS_SYMBOL_LIB 10000998 000998 000031 01   A  8   5  1
+  [10] .msym             MIPS_MSYM       100009cc 0009cc 000188 08   A  6   0  4
+  [11] .MIPS.stubs       PROGBITS        10000b60 000b60 000044 04  AX  0   0 16
+  [12] .text             PROGBITS        10000bb0 000bb0 000170 04  AX  0   0 16
+  [13] .init             PROGBITS        10000d20 000d20 000018 04  AX  0   0 16
+  [14] .rodata           PROGBITS        10004000 004000 000010 00  WA  0   0  8
+  [15] .got              PROGBITS        10004010 004010 000094 04 WAp  0   0  4
+  [16] .bss              NOBITS          100040b0 0040a4 000024 00  WA  0   0 16
+  [17] .debug_line       MIPS_DWARF      00000000 0040a4 000399 00      0   0  1
+  [18] .debug_pubnames   MIPS_DWARF      00000000 00443d 000072 00      0   0  1
+  [19] .debug_abbrev     MIPS_DWARF      00000000 0044af 000091 00      0   0  1
+  [20] .debug_info       MIPS_DWARF      00000000 004540 000296 00      0   0  1
+  [21] .debug_frame      MIPS_DWARF      00000000 0047d6 0000d4 00   o  0   0  1
+  [22] .debug_aranges    MIPS_DWARF      00000000 0048aa 000080 00      0   0  1
+  [23] .comment          PROGBITS        00000000 00492c 0000c9 00      0   0  4
+  [24] .MIPS.interfaces  MIPS_IFACE      00000000 0049f8 000000 08   o  0   0  4
+  [25] .MIPS.events.text MIPS_EVENTS     00000000 0049f8 000050 00   o 12   0  1
+  [26] .MIPS.events.init MIPS_EVENTS     00000000 004a48 000011 00   o 13   0  1
+  [27] .shstrtab         STRTAB          00000000 004a59 00011f 00      0   0  0
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  p (processor specific)
+
+There are no section groups in this file.
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  PHDR           0x000034 0x10000034 0x10000034 0x000e0 0x000e0 R   0x4
+  INTERP         0x000114 0x10000114 0x10000114 0x00015 0x00015 R   0x4
+      [Requesting program interpreter: /usr/lib32/libc.so.1]
+  OPTIONS        0x000130 0x10000130 0x10000130 0x00080 0x00080 R   0x8
+  REGINFO        0x0001b0 0x100001b0 0x100001b0 0x00018 0x00018 R   0x4
+  DYNAMIC        0x0001c8 0x100001c8 0x100001c8 0x00118 0x00118 R   0x4
+  LOAD           0x000000 0x10000000 0x10000000 0x00d38 0x00d38 R E 0x10000
+  LOAD           0x004000 0x10004000 0x10004000 0x000a4 0x000d4 RW  0x4000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     
+   01     .interp 
+   02     .MIPS.options 
+   03     .reginfo 
+   04     .dynamic 
+   05     .interp .MIPS.options .reginfo .dynamic .liblist .dynstr .hash .dynsym .MIPS.symlib .msym .MIPS.stubs .text .init 
+   06     .rodata .got .bss 
+
+Dynamic section at offset 0x1c8 contains 35 entries:
+  Tag        Type                         Name/Value
+ 0x00000004 (HASH)                       0x100004bc
+ 0x00000005 (STRTAB)                     0x100002f4
+ 0x00000006 (SYMTAB)                     0x10000688
+ 0x0000000a (STRSZ)                      456 (bytes)
+ 0x0000000b (SYMENT)                     16 (bytes)
+ 0x0000000c (INIT)                       0x0
+ 0x0000000d (FINI)                       0x0
+ 0x70000001 (MIPS_RLD_VERSION)           1
+ 0x70000005 (MIPS_FLAGS)                 QUICKSTART SGI_ONLY REQUICKSTART NO_UNRES_UNDEF RLD_ORDER_SAFE
+ 0x70000006 (MIPS_BASE_ADDRESS)          0x10000000
+ 0x7000000b (MIPS_CONFLICTNO)            0
+ 0x70000010 (MIPS_LIBLISTNO)             1
+ 0x70000011 (MIPS_SYMTABNO)              49
+ 0x70000030 (MIPS_GP_VALUE)              0x1000c000
+ 0x70000012 (MIPS_UNREFEXTNO)            10
+ 0x70000013 (MIPS_GOTSYM)                0x29
+ 0x70000025 (MIPS_LOCALPAGE_GOTIDX)      0x1
+ 0x70000025 (MIPS_LOCALPAGE_GOTIDX)      0xd
+ 0x70000026 (MIPS_LOCAL_GOTIDX)          0x1a
+ 0x70000027 (MIPS_HIDDEN_GOTIDX)         0x1a
+ 0x70000028 (MIPS_PROTECTED_GOTIDX)      0x1a
+ 0x7000000a (MIPS_LOCAL_GOTNO)           26
+ 0x00000003 (PLTGOT)                     0x10004010
+ 0x7000002d (MIPS_RLD_TEXT_RESOLVE_ADDR) 0xfb602ac
+ 0x70000029 (MIPS_OPTIONS)               0x10000130
+ 0x70000009 (MIPS_LIBLIST)               0x100002e0
+ 0x00000001 (NEEDED)                     Shared library: [libc.so.1]
+ 0x70000024 (MIPS_SYMBOL_LIB)            0x10000998
+ 0x70000002 (MIPS_TIME_STAMP)            Time Stamp: 2019-06-18T20:38:11
+ 0x70000003 (MIPS_ICHECKSUM)             0x755141a0
+ 0x70000007 (MIPS_MSYM)                  0x100009cc
+ 0x70000016 (MIPS_RLD_MAP)               0x100040c0
+ 0x7000002a (MIPS_INTERFACE)             0x0
+ 0x7000002c (MIPS_INTERFACE_SIZE)        0x0
+ 0x00000000 (NULL)                       0x0
+
+There are no relocations in this file.
+
+The decoding of unwind sections for machine type MIPS R3000 is not currently supported.
+
+Symbol table '.dynsym' contains 49 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000   921 SECTION LOCAL  DEFAULT PRC[0xff02] .debug_line
+     2: 00000000   114 SECTION LOCAL  DEFAULT PRC[0xff02] .debug_pubnames
+     3: 00000000   212 SECTION LOCAL  DEFAULT PRC[0xff02] .debug_frame
+     4: 00000000   145 SECTION LOCAL  DEFAULT PRC[0xff02] .debug_abbrev
+     5: 00000000   662 SECTION LOCAL  DEFAULT PRC[0xff02] .debug_info
+     6: 00000000   128 SECTION LOCAL  DEFAULT PRC[0xff02] .debug_aranges
+     7: 10000114    21 SECTION LOCAL  DEFAULT PRC[0xff02] .interp
+     8: 10000130   128 SECTION LOCAL  DEFAULT PRC[0xff02] .MIPS.options
+     9: 100001b0    24 SECTION LOCAL  DEFAULT PRC[0xff02] .reginfo
+    10: 100001c8   280 SECTION LOCAL  DEFAULT PRC[0xff02] .dynamic
+    11: 100002e0    20 SECTION LOCAL  DEFAULT PRC[0xff02] .liblist
+    12: 100002f4   456 SECTION LOCAL  DEFAULT PRC[0xff02] .dynstr
+    13: 100004bc   460 SECTION LOCAL  DEFAULT PRC[0xff02] .hash
+    14: 10000688   784 SECTION LOCAL  DEFAULT PRC[0xff02] .dynsym
+    15: 10000998    49 SECTION LOCAL  DEFAULT PRC[0xff02] .MIPS.symlib
+    16: 100009cc   392 SECTION LOCAL  DEFAULT PRC[0xff02] .msym
+    17: 10000b60    68 SECTION LOCAL  DEFAULT PRC[0xff01] .MIPS.stubs
+    18: 10000bb0   368 SECTION LOCAL  DEFAULT PRC[0xff01] .text
+    19: 10000d20    24 SECTION LOCAL  DEFAULT PRC[0xff01] .init
+    20: 10004000    16 SECTION LOCAL  DEFAULT PRC[0xff02] .rodata
+    21: 10004010   148 SECTION LOCAL  DEFAULT PRC[0xff02] .got
+    22: 100040b0    36 SECTION LOCAL  DEFAULT PRC[0xff02] .bss
+    23: 00000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __dso_displacement
+    24: 10000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __elf_header
+    25: 10000034     0 SECTION GLOBAL PROTECTED PRC[0xff01] __program_header_table
+    26: 10000b60     0 SECTION GLOBAL DEFAULT PRC[0xff01] ftext
+    27: 10000b60     0 SECTION GLOBAL DEFAULT PRC[0xff01] _ftext
+    28: 10000bb0   268 FUNC    GLOBAL DEFAULT PRC[0xff01] __start
+    29: 10000cbc    12 FUNC    GLOBAL DEFAULT PRC[0xff01] _mcount
+    30: 10000d38     0 SECTION GLOBAL DEFAULT PRC[0xff01] _etext
+    31: 10000d38     0 SECTION GLOBAL DEFAULT PRC[0xff01] etext
+    32: 10004000     0 SECTION GLOBAL DEFAULT PRC[0xff02] _fdata
+    33: 10004000     0 SECTION GLOBAL DEFAULT PRC[0xff02] fdata
+    34: 100040a4     0 SECTION GLOBAL DEFAULT PRC[0xff02] _edata
+    35: 100040a4     0 SECTION GLOBAL DEFAULT PRC[0xff02] _fbss
+    36: 100040a4     0 SECTION GLOBAL DEFAULT PRC[0xff02] edata
+    37: 100040a4     0 SECTION GLOBAL DEFAULT PRC[0xff02] fbss
+    38: 100040c0     4 OBJECT  GLOBAL DEFAULT PRC[0xff00] __rld_obj_head
+    39: 100040d4     0 SECTION GLOBAL DEFAULT PRC[0xff02] end
+    40: 100040d4     0 SECTION GLOBAL DEFAULT PRC[0xff02] _end
+    41: 00000000     4 OBJECT  GLOBAL DEFAULT  UND _environ
+    42: 10000b64   232 FUNC    GLOBAL DEFAULT  UND exit
+    43: 10000b78     8 FUNC    GLOBAL DEFAULT  UND __readenv_sigfpe
+    44: 10000b8c   384 FUNC    GLOBAL DEFAULT  UND printf
+    45: 10000cd0    80 FUNC    GLOBAL DEFAULT PRC[0xff01] main
+    46: 10000d2c     4 FUNC    GLOBAL DEFAULT PRC[0xff01] __istart
+    47: 100040b0     4 OBJECT  GLOBAL DEFAULT PRC[0xff00] __Argc
+    48: 100040d0     4 OBJECT  GLOBAL DEFAULT PRC[0xff00] __Argv
+
+Histogram for bucket list length (total of 64 buckets):
+ Length  Number     % of total  Coverage
+      0  40         ( 62.5%)
+      1  15         ( 23.4%)     31.2%
+      2  4          (  6.2%)     47.9%
+      3  1          (  1.6%)     54.2%
+      4  2          (  3.1%)     70.8%
+      5  1          (  1.6%)     81.2%
+      6  0          (  0.0%)     81.2%
+      7  0          (  0.0%)     81.2%
+      8  0          (  0.0%)     81.2%
+      9  1          (  1.6%)    100.0%
+
+No version information found in this file.
+
+Section '.liblist' contains 1 entry:
+     Library              Time Stamp          Checksum   Version Flags
+  0: libc.so.1 2008-01-14T19:12:20 0x20e66fe7 210     NONE
+
+Section '.MIPS.options' contains 6 entries:
+ REGINFO    GPR 02080000  GP 0x0
+            CPR0 00001f00  CPR1 04080000  CPR2 00000000  CPR3 06300000
+ EXCEPTIONS fpe_min(0) fpe_max(INEX|UFLO|OFLO|DIV0|INVAL)
+ HWPATCH   
+ TAGS       \000\000\000\000\020\000\300\000\002\010\000\000\000\000\037\000\004\010\000\000\000\000\000\000\0060\000\000\000\000\000\000\000\000\000\000\000\000\000\000
+ HWAND     \000\000\000\000\000\000\000\000
+ HWOR      \000\000\000\000\000\000\000\000
+
+Primary GOT:
+ Canonical gp value: 1000c000
+
+ Reserved entries:
+   Address     Access  Initial Purpose
+  10004010 -32752(gp) 0fb602ac Lazy resolver
+
+ Local entries:
+   Address     Access  Initial
+  10004014 -32748(gp) 10000000
+  10004018 -32744(gp) 10010000
+  1000401c -32740(gp) 00000000
+  10004020 -32736(gp) 00000000
+  10004024 -32732(gp) 00000000
+  10004028 -32728(gp) 00000000
+  1000402c -32724(gp) 00000000
+  10004030 -32720(gp) 00000000
+  10004034 -32716(gp) 00000000
+  10004038 -32712(gp) 00000000
+  1000403c -32708(gp) 00000000
+  10004040 -32704(gp) 00000000
+  10004044 -32700(gp) 10000000
+  10004048 -32696(gp) 10010000
+  1000404c -32692(gp) 00000000
+  10004050 -32688(gp) 00000000
+  10004054 -32684(gp) 00000000
+  10004058 -32680(gp) 00000000
+  1000405c -32676(gp) 00000000
+  10004060 -32672(gp) 00000000
+  10004064 -32668(gp) 00000000
+  10004068 -32664(gp) 00000000
+  1000406c -32660(gp) 00000000
+  10004070 -32656(gp) 00000000
+  10004074 -32652(gp) 00000000
+
+ Global entries:
+   Address     Access  Initial Sym.Val. Type    Ndx Name
+  10004078 -32648(gp) 0fb4fa20 00000000 OBJECT  UND _environ
+  1000407c -32644(gp) 0fa4ab04 10000b64 FUNC    UND exit
+  10004080 -32640(gp) 0fa4336c 10000b78 FUNC    UND __readenv_sigfpe
+  10004084 -32636(gp) 0fa58cf0 10000b8c FUNC    UND printf
+  10004088 -32632(gp) 10000cd0 10000cd0 FUNC    PRC[0xff01] main
+  1000408c -32628(gp) 10000d2c 10000d2c FUNC    PRC[0xff01] __istart
+  10004090 -32624(gp) 100040b0 100040b0 OBJECT  PRC[0xff00] __Argc
+  10004094 -32620(gp) 100040d0 100040d0 OBJECT  PRC[0xff00] __Argv
+
