@@ -62,11 +62,11 @@ main:
 	.4byte	.LECIE0-.LSCIE0
 .LSCIE0:
 	.4byte	0xffffffff
-	.byte	0x3
+	.byte	0x1
 	.ascii	"\000"
 	.uleb128 0x1
 	.sleb128 -4
-	.uleb128 0x40
+	.byte	0x40
 	.byte	0xc
 	.uleb128 0x1d
 	.uleb128 0
@@ -99,4 +99,5 @@ main:
 	.byte	0xdf
 	.align	2
 .LEFDE0:
+	.align	0
 	.ident	"GCC: (GNU) 8.2.0"

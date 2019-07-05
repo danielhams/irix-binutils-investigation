@@ -10,7 +10,7 @@ ELF Header:
   Version:                           0x1
   Entry point address:               0x10000580
   Start of program headers:          52 (bytes into file)
-  Start of section headers:          8500 (bytes into file)
+  Start of section headers:          8428 (bytes into file)
   Flags:                             0x30000027, noreorder, pic, cpic, abi2, mips4
   Size of this header:               52 (bytes)
   Size of program headers:           32 (bytes)
@@ -48,11 +48,11 @@ Section Headers:
   [24] .debug_info       MIPS_DWARF      00000000 00104b 000246 00      0   0  1
   [25] .debug_abbrev     MIPS_DWARF      00000000 001291 00006e 00      0   0  1
   [26] .debug_line       MIPS_DWARF      00000000 0012ff 000399 00      0   0  1
-  [27] .debug_frame      MIPS_DWARF      00000000 001698 0001e0 00   o  0   0  4
-  [28] .gnu.attributes   GNU_ATTRIBUTES  00000000 001878 000010 00      0   0  1
-  [29] .symtab           SYMTAB          00000000 001888 000510 10     30  51  4
-  [30] .strtab           STRTAB          00000000 001d98 00026b 00      0   0  1
-  [31] .shstrtab         STRTAB          00000000 002003 000130 00      0   0  1
+  [27] .debug_frame      MIPS_DWARF      00000000 001698 000198 00   o  0   0  4
+  [28] .gnu.attributes   GNU_ATTRIBUTES  00000000 001830 000010 00      0   0  1
+  [29] .symtab           SYMTAB          00000000 001840 000510 10     30  51  4
+  [30] .strtab           STRTAB          00000000 001d50 00026b 00      0   0  1
+  [31] .shstrtab         STRTAB          00000000 001fbb 000130 00      0   0  1
 Key to Flags:
   W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
   L (link order), O (extra OS processing required), G (group), T (TLS),
@@ -250,13 +250,13 @@ Section '.MIPS.options' contains 10 entries:
             CPR0 00001f00  CPR1 04080000  CPR2 00000000  CPR3 07100000
  EXCEPTIONS fpe_min(0) fpe_max(INEX|UFLO|OFLO|DIV0|INVAL)
  HWPATCH   
- HWAND     \000\000\000\000\020\001\212\260
+ HWAND DH1 \000\000\000\000\020\001\212\260
  HWOR      \004\010\000\000\000\000\000\000
  REGINFO    GPR 02080000  GP 0x0
             CPR0 00001f00  CPR1 04080000  CPR2 00000000  CPR3 07100000
  EXCEPTIONS fpe_min(0) fpe_max(INEX|UFLO|OFLO|DIV0|INVAL)
  HWPATCH   
- HWAND     \000\000\000\000\000\000\000\000
+ HWAND DH1 \000\000\000\000\000\000\000\000
  HWOR      \000\000\000\001\000\000\000\000
 
 Primary GOT:

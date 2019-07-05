@@ -10,14 +10,14 @@ ELF Header:
   Version:                           0x1
   Entry point address:               0x10000580
   Start of program headers:          52 (bytes into file)
-  Start of section headers:          6516 (bytes into file)
+  Start of section headers:          6544 (bytes into file)
   Flags:                             0x30000027, noreorder, pic, cpic, abi2, mips4
   Size of this header:               52 (bytes)
   Size of program headers:           32 (bytes)
   Number of program headers:         7
   Size of section headers:           40 (bytes)
-  Number of section headers:         31
-  Section header string table index: 28
+  Number of section headers:         32
+  Section header string table index: 29
 
 Section Headers:
   [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
@@ -38,20 +38,21 @@ Section Headers:
   [14] .dtors            PROGBITS        10010a00 000a00 000008 00  WA  0   0  4
   [15] .rodata           PROGBITS        10010a10 000a10 000010 01 AMS  0   0  8
   [16] .MIPS.options     MIPS_OPTIONS    10010a20 000a20 0000a0 01  Ao  0   0  8
-  [17] .got              PROGBITS        10010ac0 000ac0 000060 04 WAp  0   0 16
-  [18] .sdata            PROGBITS        10010b20 000b20 000004 00 WAp  0   0  4
-  [19] .bss              NOBITS          10010b30 000b24 000044 00  WA  0   0 16
-  [20] .comment          PROGBITS        00000000 000b24 000465 00      0   0  4
-  [21] .debug_aranges    MIPS_DWARF      00000000 000f89 000060 00      0   0  1
-  [22] .debug_pubnames   MIPS_DWARF      00000000 000fe9 000072 00      0   0  1
-  [23] .debug_info       MIPS_DWARF      00000000 00105b 000246 00      0   0  1
-  [24] .debug_abbrev     MIPS_DWARF      00000000 0012a1 00006e 00      0   0  1
-  [25] .debug_line       MIPS_DWARF      00000000 00130f 000399 00      0   0  1
-  [26] .debug_frame      MIPS_DWARF      00000000 0016a8 000198 00   o  0   0  4
-  [27] .gnu.attributes   GNU_ATTRIBUTES  00000000 001840 000010 00      0   0  1
-  [28] .shstrtab         STRTAB          00000000 001850 000121 00      0   0  1
-  [29] .symtab           SYMTAB          00000000 001e4c 0004e0 10     30  47  4
-  [30] .strtab           STRTAB          00000000 00232c 000284 00      0   0  1
+  [17] .MIPS.abiflags    MIPS_ABIFLAGS   10010ac0 000ac0 000018 00   A  0   0  8
+  [18] .got              PROGBITS        10010ae0 000ae0 000060 04 WAp  0   0 16
+  [19] .sdata            PROGBITS        10010b40 000b40 000004 00 WAp  0   0  4
+  [20] .bss              NOBITS          10010b50 000b44 000044 00  WA  0   0 16
+  [21] .comment          PROGBITS        00000000 000b44 000455 00      0   0  4
+  [22] .debug_aranges    MIPS_DWARF      00000000 000f99 000060 00      0   0  1
+  [23] .debug_pubnames   MIPS_DWARF      00000000 000ff9 000072 00      0   0  1
+  [24] .debug_info       MIPS_DWARF      00000000 00106b 000246 00      0   0  1
+  [25] .debug_abbrev     MIPS_DWARF      00000000 0012b1 00006e 00      0   0  1
+  [26] .debug_line       MIPS_DWARF      00000000 00131f 000399 00      0   0  1
+  [27] .debug_frame      MIPS_DWARF      00000000 0016b8 000198 00   o  0   0  4
+  [28] .gnu.attributes   GNU_ATTRIBUTES  00000000 001850 000010 00      0   0  1
+  [29] .shstrtab         STRTAB          00000000 001860 000130 00      0   0  1
+  [30] .symtab           SYMTAB          00000000 001e90 0004f0 10     31  48  4
+  [31] .strtab           STRTAB          00000000 002380 000284 00      0   0  1
 Key to Flags:
   W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
   L (link order), O (extra OS processing required), G (group), T (TLS),
@@ -68,7 +69,7 @@ Program Headers:
   OPTIONS        0x000a20 0x10010a20 0x10010a20 0x000a0 0x000a0 R   0x8
   REGINFO        0x00012c 0x1000012c 0x1000012c 0x00018 0x00018 R   0x4
   LOAD           0x000000 0x10000000 0x10000000 0x009f8 0x009f8 R E 0x10000
-  LOAD           0x0009f8 0x100109f8 0x100109f8 0x0012c 0x0017c RW  0x10000
+  LOAD           0x0009f8 0x100109f8 0x100109f8 0x0014c 0x0019c RW  0x10000
   DYNAMIC        0x000144 0x10000144 0x10000144 0x000c8 0x000c8 R   0x4
 
  Section to Segment mapping:
@@ -78,7 +79,7 @@ Program Headers:
    02     .MIPS.options 
    03     .reginfo 
    04     .interp .reginfo .dynamic .hash .dynsym .dynstr .init .text .MIPS.stubs .gcc_init .gcc_fini .eh_frame 
-   05     .ctors .dtors .rodata .MIPS.options .got .sdata .bss 
+   05     .ctors .dtors .rodata .MIPS.options .MIPS.abiflags .got .sdata .bss 
    06     .dynamic 
 
 Dynamic section at offset 0x144 contains 20 entries:
@@ -92,14 +93,14 @@ Dynamic section at offset 0x144 contains 20 entries:
  0x00000006 (SYMTAB)                     0x100002b4
  0x0000000a (STRSZ)                      306 (bytes)
  0x0000000b (SYMENT)                     16 (bytes)
- 0x70000016 (MIPS_RLD_MAP)               0x10010b70
- 0x00000003 (PLTGOT)                     0x10010ac0
+ 0x70000016 (MIPS_RLD_MAP)               0x10010b90
+ 0x00000003 (PLTGOT)                     0x10010ae0
  0x70000001 (MIPS_RLD_VERSION)           1
  0x70000005 (MIPS_FLAGS)                 NOTPOT
  0x70000006 (MIPS_BASE_ADDRESS)          0x10000000
  0x7000000a (MIPS_LOCAL_GOTNO)           12
  0x70000011 (MIPS_SYMTABNO)              23
- 0x70000012 (MIPS_UNREFEXTNO)            28
+ 0x70000012 (MIPS_UNREFEXTNO)            29
  0x70000013 (MIPS_GOTSYM)                0xb
  0x70000029 (MIPS_OPTIONS)               0x10010a20
  0x00000000 (NULL)                       0x0
@@ -118,23 +119,23 @@ Symbol table '.dynsym' contains 23 entries:
      5: 10010a04     0 OBJECT  LOCAL  HIDDEN    14 __DTOR_END__
      6: 00000000     0 OBJECT  WEAK   DEFAULT  UND environ
      7: 00000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __dso_displacement
-     8: 10010b74     0 SECTION GLOBAL PROTECTED PRC[0xff02] _end
+     8: 10010b94     0 SECTION GLOBAL PROTECTED PRC[0xff02] _end
      9: 10000034     0 SECTION GLOBAL PROTECTED PRC[0xff01] __program_header_table
-    10: 10010b70     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __rld_obj_head
+    10: 10010b90     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __rld_obj_head
     11: 00000000     0 FUNC    WEAK   DEFAULT  UND __deregister_frame_info
     12: 10000860    64 FUNC    GLOBAL DEFAULT PRC[0xff01] main
     13: 10000930     0 FUNC    GLOBAL DEFAULT  UND printf
     14: 1000056c     4 FUNC    GLOBAL DEFAULT PRC[0xff01] __istart
     15: 10000920     0 FUNC    GLOBAL DEFAULT  UND __readenv_sigfpe
     16: 10000910     0 FUNC    GLOBAL DEFAULT  UND exit
-    17: 10010b60     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argv
+    17: 10010b80     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argv
     18: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_registerTMCloneTable
-    19: 10010b50     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argc
+    19: 10010b70     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argc
     20: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTab
     21: 00000000     0 OBJECT  GLOBAL DEFAULT  UND _environ
     22: 00000000     0 FUNC    WEAK   DEFAULT  UND __register_frame_info
 
-Symbol table '.symtab' contains 78 entries:
+Symbol table '.symtab' contains 79 entries:
    Num:    Value  Size Type    Bind   Vis      Ndx Name
      0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
      1: 10000114     0 SECTION LOCAL  DEFAULT    1 
@@ -154,9 +155,9 @@ Symbol table '.symtab' contains 78 entries:
     15: 10010a10     0 SECTION LOCAL  DEFAULT   15 
     16: 10010a20     0 SECTION LOCAL  DEFAULT   16 
     17: 10010ac0     0 SECTION LOCAL  DEFAULT   17 
-    18: 10010b20     0 SECTION LOCAL  DEFAULT   18 
-    19: 10010b30     0 SECTION LOCAL  DEFAULT   19 
-    20: 00000000     0 SECTION LOCAL  DEFAULT   20 
+    18: 10010ae0     0 SECTION LOCAL  DEFAULT   18 
+    19: 10010b40     0 SECTION LOCAL  DEFAULT   19 
+    20: 10010b50     0 SECTION LOCAL  DEFAULT   20 
     21: 00000000     0 SECTION LOCAL  DEFAULT   21 
     22: 00000000     0 SECTION LOCAL  DEFAULT   22 
     23: 00000000     0 SECTION LOCAL  DEFAULT   23 
@@ -164,56 +165,57 @@ Symbol table '.symtab' contains 78 entries:
     25: 00000000     0 SECTION LOCAL  DEFAULT   25 
     26: 00000000     0 SECTION LOCAL  DEFAULT   26 
     27: 00000000     0 SECTION LOCAL  DEFAULT   27 
-    28: 00000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
-    29: 100109f8     0 OBJECT  LOCAL  DEFAULT   13 __CTOR_LIST__
-    30: 10010a00     0 OBJECT  LOCAL  DEFAULT   14 __DTOR_LIST__
-    31: 100009f4     0 OBJECT  LOCAL  DEFAULT   12 __EH_FRAME_BEGIN__
-    32: 100006a0     0 FUNC    LOCAL  DEFAULT    8 deregister_tm_clones
-    33: 100006d8     0 FUNC    LOCAL  DEFAULT    8 register_tm_clones
-    34: 10000728     0 FUNC    LOCAL  DEFAULT    8 __do_global_dtors_aux
-    35: 10010b30     1 OBJECT  LOCAL  DEFAULT   19 completed.5222
-    36: 10010b34     4 OBJECT  LOCAL  DEFAULT   19 dtor_idx.5224
-    37: 10000810     0 FUNC    LOCAL  DEFAULT    8 frame_dummy
-    38: 10010b38    24 OBJECT  LOCAL  DEFAULT   19 object.5234
-    39: 00000000     0 FILE    LOCAL  DEFAULT  ABS simple.c
-    40: 00000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
-    41: 100109fc     0 OBJECT  LOCAL  DEFAULT   13 __CTOR_END__
-    42: 100009f4     0 OBJECT  LOCAL  DEFAULT   12 __FRAME_END__
-    43: 100008a0     0 FUNC    LOCAL  DEFAULT    8 __do_global_ctors_aux
-    44: 10010a10     0 OBJECT  LOCAL  HIDDEN    14 __TMC_END__
-    45: 10010a04     0 OBJECT  LOCAL  HIDDEN    14 __DTOR_END__
-    46: 10000144     0 OBJECT  LOCAL  HIDDEN     3 _DYNAMIC
-    47: 10010b24     0 NOTYPE  GLOBAL DEFAULT  ABS _fbss
-    48: 00000000     0 FUNC    WEAK   DEFAULT  UND __register_frame_info
-    49: 1000068c    12 FUNC    GLOBAL DEFAULT    8 _mcount
-    50: 00000000     0 OBJECT  GLOBAL DEFAULT  UND __xpg4
-    51: 10010ac0     0 OBJECT  GLOBAL DEFAULT   17 _GLOBAL_OFFSET_TABLE_
-    52: 00000000     0 OBJECT  GLOBAL DEFAULT  UND _environ
-    53: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTab
-    54: 10010b50     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argc
-    55: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_registerTMCloneTable
-    56: 10018ab0     0 NOTYPE  GLOBAL DEFAULT  ABS _gp
-    57: 10010b60     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argv
-    58: 10000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __elf_header
-    59: 00000001     0 SECTION GLOBAL DEFAULT  ABS _DYNAMIC_LINK
-    60: 10000580   268 FUNC    GLOBAL DEFAULT    8 __start
-    61: 10010b20     0 OBJECT  GLOBAL HIDDEN    18 __dso_handle
-    62: 10010a10     0 NOTYPE  GLOBAL DEFAULT   14 _fdata
-    63: 10010b24     0 NOTYPE  GLOBAL DEFAULT  ABS __bss_start
-    64: 00000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __dso_displacement
-    65: 10000580     0 NOTYPE  GLOBAL DEFAULT    8 _ftext
-    66: 10000950     0 OBJECT  GLOBAL HIDDEN    10 __gcc_init
-    67: 100009b4     0 OBJECT  GLOBAL HIDDEN    11 __gcc_fini
-    68: 10010b74     0 SECTION GLOBAL PROTECTED PRC[0xff02] _end
-    69: 10000910     0 FUNC    GLOBAL DEFAULT  UND exit
-    70: 10000920     0 FUNC    GLOBAL DEFAULT  UND __readenv_sigfpe
-    71: 10000034     0 SECTION GLOBAL PROTECTED PRC[0xff01] __program_header_table
-    72: 10010b70     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __rld_obj_head
-    73: 1000056c     4 FUNC    GLOBAL DEFAULT PRC[0xff01] __istart
-    74: 10010b24     0 NOTYPE  GLOBAL DEFAULT  ABS _edata
-    75: 10000930     0 FUNC    GLOBAL DEFAULT  UND printf
-    76: 10000860    64 FUNC    GLOBAL DEFAULT PRC[0xff01] main
-    77: 00000000     0 FUNC    WEAK   DEFAULT  UND __deregister_frame_info
+    28: 00000000     0 SECTION LOCAL  DEFAULT   28 
+    29: 00000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
+    30: 100109f8     0 OBJECT  LOCAL  DEFAULT   13 __CTOR_LIST__
+    31: 10010a00     0 OBJECT  LOCAL  DEFAULT   14 __DTOR_LIST__
+    32: 100009f4     0 OBJECT  LOCAL  DEFAULT   12 __EH_FRAME_BEGIN__
+    33: 100006a0     0 FUNC    LOCAL  DEFAULT    8 deregister_tm_clones
+    34: 100006d8     0 FUNC    LOCAL  DEFAULT    8 register_tm_clones
+    35: 10000728     0 FUNC    LOCAL  DEFAULT    8 __do_global_dtors_aux
+    36: 10010b50     1 OBJECT  LOCAL  DEFAULT   20 completed.5222
+    37: 10010b54     4 OBJECT  LOCAL  DEFAULT   20 dtor_idx.5224
+    38: 10000810     0 FUNC    LOCAL  DEFAULT    8 frame_dummy
+    39: 10010b58    24 OBJECT  LOCAL  DEFAULT   20 object.5234
+    40: 00000000     0 FILE    LOCAL  DEFAULT  ABS simple.c
+    41: 00000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
+    42: 100109fc     0 OBJECT  LOCAL  DEFAULT   13 __CTOR_END__
+    43: 100009f4     0 OBJECT  LOCAL  DEFAULT   12 __FRAME_END__
+    44: 100008a0     0 FUNC    LOCAL  DEFAULT    8 __do_global_ctors_aux
+    45: 10010a10     0 OBJECT  LOCAL  HIDDEN    14 __TMC_END__
+    46: 10010a04     0 OBJECT  LOCAL  HIDDEN    14 __DTOR_END__
+    47: 10000144     0 OBJECT  LOCAL  HIDDEN     3 _DYNAMIC
+    48: 10010b44     0 NOTYPE  GLOBAL DEFAULT  ABS _fbss
+    49: 00000000     0 FUNC    WEAK   DEFAULT  UND __register_frame_info
+    50: 1000068c    12 FUNC    GLOBAL DEFAULT    8 _mcount
+    51: 00000000     0 OBJECT  GLOBAL DEFAULT  UND __xpg4
+    52: 10010ae0     0 OBJECT  GLOBAL DEFAULT   18 _GLOBAL_OFFSET_TABLE_
+    53: 00000000     0 OBJECT  GLOBAL DEFAULT  UND _environ
+    54: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTab
+    55: 10010b70     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argc
+    56: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_registerTMCloneTable
+    57: 10018ad0     0 NOTYPE  GLOBAL DEFAULT  ABS _gp
+    58: 10010b80     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argv
+    59: 10000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __elf_header
+    60: 00000001     0 SECTION GLOBAL DEFAULT  ABS _DYNAMIC_LINK
+    61: 10000580   268 FUNC    GLOBAL DEFAULT    8 __start
+    62: 10010b40     0 OBJECT  GLOBAL HIDDEN    19 __dso_handle
+    63: 10010a10     0 NOTYPE  GLOBAL DEFAULT   14 _fdata
+    64: 10010b44     0 NOTYPE  GLOBAL DEFAULT  ABS __bss_start
+    65: 00000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __dso_displacement
+    66: 10000580     0 NOTYPE  GLOBAL DEFAULT    8 _ftext
+    67: 10000950     0 OBJECT  GLOBAL HIDDEN    10 __gcc_init
+    68: 100009b4     0 OBJECT  GLOBAL HIDDEN    11 __gcc_fini
+    69: 10010b94     0 SECTION GLOBAL PROTECTED PRC[0xff02] _end
+    70: 10000910     0 FUNC    GLOBAL DEFAULT  UND exit
+    71: 10000920     0 FUNC    GLOBAL DEFAULT  UND __readenv_sigfpe
+    72: 10000034     0 SECTION GLOBAL PROTECTED PRC[0xff01] __program_header_table
+    73: 10010b90     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __rld_obj_head
+    74: 1000056c     4 FUNC    GLOBAL DEFAULT PRC[0xff01] __istart
+    75: 10010b44     0 NOTYPE  GLOBAL DEFAULT  ABS _edata
+    76: 10000930     0 FUNC    GLOBAL DEFAULT  UND printf
+    77: 10000860    64 FUNC    GLOBAL DEFAULT PRC[0xff01] main
+    78: 00000000     0 FUNC    WEAK   DEFAULT  UND __deregister_frame_info
 
 Histogram for bucket list length (total of 17 buckets):
  Length  Number     % of total  Coverage
@@ -227,12 +229,25 @@ Attribute Section: gnu
 File Attributes
   Tag_GNU_MIPS_ABI_FP: Hard float (double precision)
 
+MIPS ABI Flags Version: 0
+
+ISA: MIPS3
+GPR size: 64
+CPR1 size: 64
+CPR2 size: 0
+FP ABI: Hard float (double precision)
+ISA Extension: None
+ASEs:
+	None
+FLAGS 1: 00000001
+FLAGS 2: 00000000
+
 Section '.MIPS.options' contains 10 entries:
  REGINFO    GPR 02080000  GP 0x0
             CPR0 00001f00  CPR1 04080000  CPR2 00000000  CPR3 07100000
  EXCEPTIONS fpe_min(0) fpe_max(INEX|UFLO|OFLO|DIV0|INVAL)
  HWPATCH   
- HWAND DH1 \000\000\000\000\020\001\212\260
+ HWAND DH1 \000\000\000\000\020\001\212\320
  HWOR      \004\010\000\000\000\000\000\000
  REGINFO    GPR 02080000  GP 0x0
             CPR0 00001f00  CPR1 04080000  CPR2 00000000  CPR3 07100000
@@ -242,38 +257,38 @@ Section '.MIPS.options' contains 10 entries:
  HWOR      \000\000\000\001\000\000\000\000
 
 Primary GOT:
- Canonical gp value: 10018ab0
+ Canonical gp value: 10018ad0
 
  Reserved entries:
    Address     Access  Initial Purpose
-  10010ac0 -32752(gp) 00000000 Lazy resolver
-  10010ac4 -32748(gp) 80000000 Module pointer (GNU extension)
+  10010ae0 -32752(gp) 00000000 Lazy resolver
+  10010ae4 -32748(gp) 80000000 Module pointer (GNU extension)
 
  Local entries:
    Address     Access  Initial
-  10010ac8 -32744(gp) 10010000
-  10010acc -32740(gp) 10010a10
-  10010ad0 -32736(gp) 10010a04
-  10010ad4 -32732(gp) 10000000
-  10010ad8 -32728(gp) 10000728
-  10010adc -32724(gp) 10000810
-  10010ae0 -32720(gp) 100008a0
-  10010ae4 -32716(gp) 00000000
-  10010ae8 -32712(gp) 00000000
-  10010aec -32708(gp) 00000000
+  10010ae8 -32744(gp) 10010000
+  10010aec -32740(gp) 10010a10
+  10010af0 -32736(gp) 10010a04
+  10010af4 -32732(gp) 10000000
+  10010af8 -32728(gp) 10000728
+  10010afc -32724(gp) 10000810
+  10010b00 -32720(gp) 100008a0
+  10010b04 -32716(gp) 00000000
+  10010b08 -32712(gp) 00000000
+  10010b0c -32708(gp) 00000000
 
  Global entries:
    Address     Access  Initial Sym.Val. Type    Ndx Name
-  10010af0 -32704(gp) 00000000 00000000 FUNC    UND __deregister_frame_info
-  10010af4 -32700(gp) 10000860 10000860 FUNC    PRC[0xff01] main
-  10010af8 -32696(gp) 10000930 10000930 FUNC    UND printf
-  10010afc -32692(gp) 1000056c 1000056c FUNC    PRC[0xff01] __istart
-  10010b00 -32688(gp) 10000920 10000920 FUNC    UND __readenv_sigfpe
-  10010b04 -32684(gp) 10000910 10000910 FUNC    UND exit
-  10010b08 -32680(gp) 10010b60 10010b60 OBJECT  PRC[0xff02] __Argv
-  10010b0c -32676(gp) 00000000 00000000 OBJECT  UND _ITM_registerTMCloneTable
-  10010b10 -32672(gp) 10010b50 10010b50 OBJECT  PRC[0xff02] __Argc
-  10010b14 -32668(gp) 00000000 00000000 OBJECT  UND _ITM_deregisterTMCloneTable
-  10010b18 -32664(gp) 00000000 00000000 OBJECT  UND _environ
-  10010b1c -32660(gp) 00000000 00000000 FUNC    UND __register_frame_info
+  10010b10 -32704(gp) 00000000 00000000 FUNC    UND __deregister_frame_info
+  10010b14 -32700(gp) 10000860 10000860 FUNC    PRC[0xff01] main
+  10010b18 -32696(gp) 10000930 10000930 FUNC    UND printf
+  10010b1c -32692(gp) 1000056c 1000056c FUNC    PRC[0xff01] __istart
+  10010b20 -32688(gp) 10000920 10000920 FUNC    UND __readenv_sigfpe
+  10010b24 -32684(gp) 10000910 10000910 FUNC    UND exit
+  10010b28 -32680(gp) 10010b80 10010b80 OBJECT  PRC[0xff02] __Argv
+  10010b2c -32676(gp) 00000000 00000000 OBJECT  UND _ITM_registerTMCloneTable
+  10010b30 -32672(gp) 10010b70 10010b70 OBJECT  PRC[0xff02] __Argc
+  10010b34 -32668(gp) 00000000 00000000 OBJECT  UND _ITM_deregisterTMCloneTable
+  10010b38 -32664(gp) 00000000 00000000 OBJECT  UND _environ
+  10010b3c -32660(gp) 00000000 00000000 FUNC    UND __register_frame_info
 
