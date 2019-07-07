@@ -1,7 +1,9 @@
 	.file	1 "simple.c"
 	.section .mdebug.abiN32
 	.previous
-	.gnu_attribute 4, 1
+	.nan	legacy
+	.module	fp=64
+	.module	oddspreg
 	.abicalls
 	.text
  #APP
@@ -23,6 +25,7 @@
 	.globl	main
 .LFB0 = .
 	.set	nomips16
+	.set	nomicromips
 	.ent	main
 	.type	main, @function
 main:
@@ -42,7 +45,8 @@ main:
 	li	$5,1			# 0x1
 	lw	$4,%got_page(.LC0)($28)
 	lw	$25,%call16(printf)($28)
-	jalr	$25
+	.reloc	1f,R_MIPS_JALR,printf
+1:	jalr	$25
 	addiu	$4,$4,%got_ofst(.LC0)
 
 	move	$2,$0

@@ -43,17 +43,29 @@ $AS232_PATH $GLEVEL $OPT gcc8.S -o gcc8_as232.o
 
 LD232_PATH=$BU232_PATH/ld/ld-new
 
-LD219_PATH=/builds/dan/bootstrapinstall/gbs8_1/bin/ld
+#LD219_PATH=/builds/dan/bootstrapbuilds/gbs4_1-binutils/build-bu/ld/ld-new
 
-echo "Doing 219 link"
+#echo "Doing 219 link"
 
-$LD219_PATH -call_shared -melf32bmipn32 -init __gcc_init -fini __gcc_fini -o exe.gcc8.ld219 /usr/lib32/mips4/crt1.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crti.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtbegin.o -L$GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0 gcc8_as232.o -lgcc -lgcc_eh -lm -lc -lgcc -lgcc_eh -lm $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtend.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crtn.o /usr/lib32/mips4/crtn.o || exit -1
+#$LD219_PATH -call_shared -melf32bmipn32 -init __gcc_init -fini __gcc_fini -o exe.gcc8.ld219 /usr/lib32/mips4/crt1.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crti.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtbegin.o -L$GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0 gcc8.o -lgcc -lgcc_eh -lm -lc -lgcc -lgcc_eh -lm $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtend.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crtn.o /usr/lib32/mips4/crtn.o || exit -1
 
-LD221_PATH=/builds/dan/bootstrapinstall/gbstest/bin/ld
+LD221_PATH=/builds/dan/bootstrapbuilds/gbstest-binutils221/build-bu/ld/ld-new
 
 echo "Doing 221 link"
 
 $LD221_PATH -call_shared -melf32bmipn32 -init __gcc_init -fini __gcc_fini -o exe.gcc8.ld221 /usr/lib32/mips4/crt1.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crti.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtbegin.o -L$GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0 gcc8_as232.o -lgcc -lgcc_eh -lm -lc -lgcc -lgcc_eh -lm $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtend.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crtn.o /usr/lib32/mips4/crtn.o || exit -1
+
+LD226_PATH=/builds/dan/bootstrapbuilds/gbstest-binutils226/build-bu/ld/ld-new
+
+echo "Doing 226 link"
+
+$LD226_PATH -call_shared -melf32bmipn32 -init __gcc_init -fini __gcc_fini -o exe.gcc8.ld226 /usr/lib32/mips4/crt1.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crti.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtbegin.o -L$GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0 gcc8_as232.o -lgcc -lgcc_eh -lm -lc -lgcc -lgcc_eh -lm $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtend.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crtn.o /usr/lib32/mips4/crtn.o || exit -1
+
+LD229_PATH=/builds/dan/bootstrapbuilds/gbstest-binutils229/build-bu/ld/ld-new
+
+echo "Doing 229 link"
+
+$LD229_PATH -call_shared -melf32bmipn32 -init __gcc_init -fini __gcc_fini -o exe.gcc8.ld229 /usr/lib32/mips4/crt1.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crti.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtbegin.o -L$GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0 gcc8_as232.o -lgcc -lgcc_eh -lm -lc -lgcc -lgcc_eh -lm $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/crtend.o $GCC8_TOOLS_PATH/../lib/gcc/mips-sgi-irix6.5/8.2.0/irix-crtn.o /usr/lib32/mips4/crtn.o || exit -1
 
 echo "Doing 232 link"
 
@@ -72,6 +84,8 @@ READELF_BIN=$BU232_PATH/binutils/readelf
 $READELF_BIN -a exe.mipspro >readelf.mipspro
 $READELF_BIN -a exe.gcc4 >readelf.gcc4
 $READELF_BIN -a exe.gcc8 >readelf.gcc8
-$READELF_BIN -a exe.gcc8.ld219 >readelf.gcc8.ld219
+#$READELF_BIN -a exe.gcc8.ld219 >readelf.gcc8.ld219
 $READELF_BIN -a exe.gcc8.ld221 >readelf.gcc8.ld221
+$READELF_BIN -a exe.gcc8.ld226 >readelf.gcc8.ld226
+$READELF_BIN -a exe.gcc8.ld229 >readelf.gcc8.ld229
 $READELF_BIN -a exe.gcc8.ld232 >readelf.gcc8.ld232

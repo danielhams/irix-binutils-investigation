@@ -10,7 +10,7 @@ ELF Header:
   Version:                           0x1
   Entry point address:               0x10000580
   Start of program headers:          52 (bytes into file)
-  Start of section headers:          7796 (bytes into file)
+  Start of section headers:          7804 (bytes into file)
   Flags:                             0x30000027, noreorder, pic, cpic, abi2, mips4
   Size of this header:               52 (bytes)
   Size of program headers:           32 (bytes)
@@ -39,20 +39,20 @@ Section Headers:
   [15] .dtors            PROGBITS        10010a00 000a00 000008 00  WA  0   0  4
   [16] .rodata           PROGBITS        10010a10 000a10 000010 01 AMS  0   0  8
   [17] .MIPS.options     MIPS_OPTIONS    10010a20 000a20 0000a0 01  Ao  0   0  8
-  [18] .got              PROGBITS        10010ac0 000ac0 000060 04 WAp  0   0 16
-  [19] .sdata            PROGBITS        10010b20 000b20 000004 00 WAp  0   0  4
-  [20] .bss              NOBITS          10010b30 000b24 000044 00  WA  0   0 16
-  [21] .comment          PROGBITS        00000000 000b24 0001dd 00      0   0  4
-  [22] .debug_aranges    MIPS_DWARF      00000000 000d01 000060 00      0   0  1
-  [23] .debug_pubnames   MIPS_DWARF      00000000 000d61 000072 00      0   0  1
-  [24] .debug_info       MIPS_DWARF      00000000 000dd3 000246 00      0   0  1
-  [25] .debug_abbrev     MIPS_DWARF      00000000 001019 00006e 00      0   0  1
-  [26] .debug_line       MIPS_DWARF      00000000 001087 000399 00      0   0  1
-  [27] .debug_frame      MIPS_DWARF      00000000 001420 000198 00   o  0   0  4
-  [28] .gnu.attributes   GNU_ATTRIBUTES  00000000 0015b8 000010 00      0   0  1
-  [29] .symtab           SYMTAB          00000000 0015c8 000510 10     30  51  4
-  [30] .strtab           STRTAB          00000000 001ad8 00026b 00      0   0  1
-  [31] .shstrtab         STRTAB          00000000 001d43 000130 00      0   0  1
+  [18] .got              PROGBITS        10010ac0 000ac0 000068 04 WAp  0   0 16
+  [19] .sdata            PROGBITS        10010b28 000b28 000004 00 WAp  0   0  4
+  [20] .bss              NOBITS          10010b30 000b2c 000044 00  WA  0   0 16
+  [21] .comment          PROGBITS        00000000 000b2c 0001dd 00      0   0  4
+  [22] .debug_aranges    MIPS_DWARF      00000000 000d09 000060 00      0   0  1
+  [23] .debug_pubnames   MIPS_DWARF      00000000 000d69 000072 00      0   0  1
+  [24] .debug_info       MIPS_DWARF      00000000 000ddb 000246 00      0   0  1
+  [25] .debug_abbrev     MIPS_DWARF      00000000 001021 00006e 00      0   0  1
+  [26] .debug_line       MIPS_DWARF      00000000 00108f 000399 00      0   0  1
+  [27] .debug_frame      MIPS_DWARF      00000000 001428 000198 00   o  0   0  4
+  [28] .gnu.attributes   GNU_ATTRIBUTES  00000000 0015c0 000010 00      0   0  1
+  [29] .symtab           SYMTAB          00000000 0015d0 000510 10     30  51  4
+  [30] .strtab           STRTAB          00000000 001ae0 00026b 00      0   0  1
+  [31] .shstrtab         STRTAB          00000000 001d4b 000130 00      0   0  1
 Key to Flags:
   W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
   L (link order), O (extra OS processing required), G (group), T (TLS),
@@ -63,14 +63,14 @@ There are no section groups in this file.
 
 Program Headers:
   Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
-  PHDR           0x000034 0x10000034 0x10000034 0x00100 0x00100 R   0x4
+  PHDR           0x000034 0x10000034 0x10000034 0x00100 0x00100 R E 0x4
   INTERP         0x000134 0x10000134 0x10000134 0x00015 0x00015 R   0x1
       [Requesting program interpreter: /usr/lib32/libc.so.1]
   OPTIONS        0x000a20 0x10010a20 0x10010a20 0x000a0 0x000a0 R   0x8
   ABIFLAGS       0x000150 0x10000150 0x10000150 0x00018 0x00018 R   0x8
   REGINFO        0x000168 0x10000168 0x10000168 0x00018 0x00018 R   0x4
   LOAD           0x000000 0x10000000 0x10000000 0x009f8 0x009f8 R E 0x10000
-  LOAD           0x0009f8 0x100109f8 0x100109f8 0x0012c 0x0017c RW  0x10000
+  LOAD           0x0009f8 0x100109f8 0x100109f8 0x00134 0x0017c RW  0x10000
   DYNAMIC        0x000180 0x10000180 0x10000180 0x000d0 0x000d0 R   0x4
 
  Section to Segment mapping:
@@ -101,10 +101,10 @@ Dynamic section at offset 0x180 contains 21 entries:
  0x70000001 (MIPS_RLD_VERSION)           1
  0x70000005 (MIPS_FLAGS)                 NOTPOT
  0x70000006 (MIPS_BASE_ADDRESS)          0x10000000
- 0x7000000a (MIPS_LOCAL_GOTNO)           16
+ 0x7000000a (MIPS_LOCAL_GOTNO)           14
  0x70000011 (MIPS_SYMTABNO)              21
  0x70000012 (MIPS_UNREFEXTNO)            29
- 0x70000013 (MIPS_GOTSYM)                0xd
+ 0x70000013 (MIPS_GOTSYM)                0x9
  0x70000029 (MIPS_OPTIONS)               0x10010a20
  0x00000000 (NULL)                       0x0
 
@@ -115,26 +115,26 @@ The decoding of unwind sections for machine type MIPS R3000 is not currently sup
 Symbol table '.dynsym' contains 21 entries:
    Num:    Value  Size Type    Bind   Vis      Ndx Name
      0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
-     1: 10000860    64 FUNC    GLOBAL DEFAULT PRC[0xff01] main
-     2: 10010b50     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __rld_obj_head
-     3: 1000056c     4 FUNC    GLOBAL DEFAULT PRC[0xff01] __istart
-     4: 10000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __elf_header
-     5: 10000034     0 SECTION GLOBAL PROTECTED PRC[0xff01] __program_header_table
-     6: 00000000     0 OBJECT  WEAK   DEFAULT  UND environ
-     7: 10010b60     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argv
-     8: 10010b70     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argc
-     9: 00000001     0 SECTION GLOBAL DEFAULT  ABS _DYNAMIC_LINK
-    10: 00000000     0 OBJECT  GLOBAL DEFAULT  UND __xpg4
-    11: 00000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __dso_displacement
-    12: 10010b74     0 SECTION GLOBAL PROTECTED PRC[0xff02] _end
-    13: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_registerTMCloneTable
-    14: 10000930     0 FUNC    GLOBAL DEFAULT  UND exit
-    15: 00000000     0 FUNC    WEAK   DEFAULT  UND __register_frame_info
-    16: 10000920     0 FUNC    GLOBAL DEFAULT  UND printf
-    17: 10000910     0 FUNC    GLOBAL DEFAULT  UND __readenv_sigfpe
-    18: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTab
-    19: 00000000     0 OBJECT  GLOBAL DEFAULT  UND _environ
-    20: 00000000     0 FUNC    WEAK   DEFAULT  UND __deregister_frame_info
+     1: 10010b50     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __rld_obj_head
+     2: 10000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __elf_header
+     3: 10000034     0 SECTION GLOBAL PROTECTED PRC[0xff01] __program_header_table
+     4: 00000000     0 OBJECT  WEAK   DEFAULT  UND environ
+     5: 00000001     0 SECTION GLOBAL DEFAULT  ABS _DYNAMIC_LINK
+     6: 00000000     0 OBJECT  GLOBAL DEFAULT  UND __xpg4
+     7: 00000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __dso_displacement
+     8: 10010b74     0 SECTION GLOBAL PROTECTED PRC[0xff02] _end
+     9: 10010b70     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argc
+    10: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_registerTMCloneTable
+    11: 10010b60     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argv
+    12: 10000930     0 FUNC    GLOBAL DEFAULT  UND exit
+    13: 00000000     0 FUNC    WEAK   DEFAULT  UND __register_frame_info
+    14: 10000920     0 FUNC    GLOBAL DEFAULT  UND printf
+    15: 10000910     0 FUNC    GLOBAL DEFAULT  UND __readenv_sigfpe
+    16: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTab
+    17: 1000056c     4 FUNC    GLOBAL DEFAULT PRC[0xff01] __istart
+    18: 00000000     0 OBJECT  GLOBAL DEFAULT  UND _environ
+    19: 00000000     0 FUNC    WEAK   DEFAULT  UND __deregister_frame_info
+    20: 10000860    64 FUNC    GLOBAL DEFAULT PRC[0xff01] main
 
 Symbol table '.symtab' contains 81 entries:
    Num:    Value  Size Type    Bind   Vis      Ndx Name
@@ -157,7 +157,7 @@ Symbol table '.symtab' contains 81 entries:
     16: 10010a10     0 SECTION LOCAL  DEFAULT   16 
     17: 10010a20     0 SECTION LOCAL  DEFAULT   17 
     18: 10010ac0     0 SECTION LOCAL  DEFAULT   18 
-    19: 10010b20     0 SECTION LOCAL  DEFAULT   19 
+    19: 10010b28     0 SECTION LOCAL  DEFAULT   19 
     20: 10010b30     0 SECTION LOCAL  DEFAULT   20 
     21: 00000000     0 SECTION LOCAL  DEFAULT   21 
     22: 00000000     0 SECTION LOCAL  DEFAULT   22 
@@ -200,7 +200,7 @@ Symbol table '.symtab' contains 81 entries:
     59: 1000068c    12 FUNC    GLOBAL DEFAULT    9 _mcount
     60: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTab
     61: 10000580   268 FUNC    GLOBAL DEFAULT    9 __start
-    62: 10010b24     0 NOTYPE  GLOBAL DEFAULT   20 _fbss
+    62: 10010b2c     0 NOTYPE  GLOBAL DEFAULT   20 _fbss
     63: 10010ac0     0 OBJECT  GLOBAL HIDDEN    18 _GLOBAL_OFFSET_TABLE_
     64: 10000910     0 FUNC    GLOBAL DEFAULT  UND __readenv_sigfpe
     65: 10000920     0 FUNC    GLOBAL DEFAULT  UND printf
@@ -208,15 +208,15 @@ Symbol table '.symtab' contains 81 entries:
     67: 10000930     0 FUNC    GLOBAL DEFAULT  UND exit
     68: 10010a10     0 NOTYPE  GLOBAL DEFAULT   15 _fdata
     69: 10010b60     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argv
-    70: 10010b24     0 NOTYPE  GLOBAL DEFAULT   20 __bss_start
-    71: 10010b20     0 OBJECT  GLOBAL HIDDEN    19 __dso_handle
+    70: 10010b2c     0 NOTYPE  GLOBAL DEFAULT   20 __bss_start
+    71: 10010b28     0 OBJECT  GLOBAL HIDDEN    19 __dso_handle
     72: 10000950     0 OBJECT  GLOBAL HIDDEN    11 __gcc_init
     73: 00000000     0 OBJECT  WEAK   DEFAULT  UND _ITM_registerTMCloneTable
     74: 10010b70     4 OBJECT  GLOBAL DEFAULT PRC[0xff02] __Argc
     75: 00000001     0 SECTION GLOBAL DEFAULT  ABS _DYNAMIC_LINK
     76: 00000000     0 OBJECT  GLOBAL DEFAULT  UND __xpg4
     77: 00000000     0 SECTION GLOBAL PROTECTED PRC[0xff01] __dso_displacement
-    78: 10010b24     0 NOTYPE  GLOBAL DEFAULT   19 _edata
+    78: 10010b2c     0 NOTYPE  GLOBAL DEFAULT   19 _edata
     79: 100009b4     0 OBJECT  GLOBAL HIDDEN    12 __gcc_fini
     80: 10010b74     0 SECTION GLOBAL PROTECTED PRC[0xff02] _end
 
@@ -279,19 +279,21 @@ Primary GOT:
   10010ae4 -32716(gp) 00000000
   10010ae8 -32712(gp) 00000000
   10010aec -32708(gp) 00000000
-  10010af0 -32704(gp) 10000860
-  10010af4 -32700(gp) 1000056c
-  10010af8 -32696(gp) 10010b60
-  10010afc -32692(gp) 10010b70
+  10010af0 -32704(gp) 00000000
+  10010af4 -32700(gp) 00000000
 
  Global entries:
    Address     Access  Initial Sym.Val. Type    Ndx Name
-  10010b00 -32688(gp) 00000000 00000000 OBJECT  UND _ITM_registerTMCloneTable
+  10010af8 -32696(gp) 10010b70 10010b70 OBJECT  PRC[0xff02] __Argc
+  10010afc -32692(gp) 00000000 00000000 OBJECT  UND _ITM_registerTMCloneTable
+  10010b00 -32688(gp) 10010b60 10010b60 OBJECT  PRC[0xff02] __Argv
   10010b04 -32684(gp) 10000930 10000930 FUNC    UND exit
   10010b08 -32680(gp) 00000000 00000000 FUNC    UND __register_frame_info
   10010b0c -32676(gp) 10000920 10000920 FUNC    UND printf
   10010b10 -32672(gp) 10000910 10000910 FUNC    UND __readenv_sigfpe
   10010b14 -32668(gp) 00000000 00000000 OBJECT  UND _ITM_deregisterTMCloneTable
-  10010b18 -32664(gp) 00000000 00000000 OBJECT  UND _environ
-  10010b1c -32660(gp) 00000000 00000000 FUNC    UND __deregister_frame_info
+  10010b18 -32664(gp) 1000056c 1000056c FUNC    PRC[0xff01] __istart
+  10010b1c -32660(gp) 00000000 00000000 OBJECT  UND _environ
+  10010b20 -32656(gp) 00000000 00000000 FUNC    UND __deregister_frame_info
+  10010b24 -32652(gp) 10000860 10000860 FUNC    PRC[0xff01] main
 
