@@ -99,4 +99,17 @@ diff -u -r -w binutils-2.21.1/bfd/elfxx-mips.c binutils-2.21.1-patched/bfd/elfxx
  		{
  		  if (!mips_elf_add_lo16_rel_addend (input_bfd, rel, relend,
  						     contents, &addend))
-Only in binutils-2.21.1-patched/bfd: elfxx-mips.c~
+diff -u -r -w binutils-2.21.1/binutils/readelf.c binutils-2.21.1-patched/binutils/readelf.c
+--- binutils-2.21.1/binutils/readelf.c	2011-03-16 08:36:01.000000000 +0000
++++ binutils-2.21.1-patched/binutils/readelf.c	2019-07-06 09:56:50.955167760 +0000
+@@ -9803,7 +9803,9 @@
+ 
+       if (data < end)
+ 	{
+-#ifndef __MSVCRT__
++#if defined(__sgi)
++	  printf ("  [%06x]  %s\n", (size_t) (data - start), data);
++#elif !defined(__MSVCRT__)
+ 	  /* PR 11128: Use two separate invocations in order to work
+              around bugs in the Solaris 8 implementation of printf.  */
+ 	  printf ("  [%6tx]  ", data - start);
